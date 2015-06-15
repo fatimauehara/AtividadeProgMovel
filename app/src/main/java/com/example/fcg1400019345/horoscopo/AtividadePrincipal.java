@@ -23,18 +23,18 @@ public class AtividadePrincipal extends ActionBarActivity {
         setContentView(R.layout.activity_atividade_principal);
 
         String [] dados= {
-                "Áres - 21/03 a 20/04",
-                "Touro - 21/04 a 20/05",
-                "Gêmeos - 21/05 a 20/06",
-                "Câncer - 21/06 a 21/07",
-                "Leão - 22/07 a 22/08",
-                "Virgem - 23/08 a 22/09",
-                "Libra - 23/09 a 22/10",
-                "Escorpião - 23/10 a 21/11",
-                "Sargitário - 22/11 a 21/12",
+                "Áres        - 21/03 a 20/04",
+                "Touro       - 21/04 a 20/05",
+                "Gêmeos      - 21/05 a 20/06",
+                "Câncer      - 21/06 a 21/07",
+                "Leão        - 22/07 a 22/08",
+                "Virgem      - 23/08 a 22/09",
+                "Libra       - 23/09 a 22/10",
+                "Escorpião   - 23/10 a 21/11",
+                "Sargitário  - 22/11 a 21/12",
                 "Capricórnio - 22/12 a 20/01",
-                "Aquário - 21/01 a 19/02",
-                "Peixes - 20/02 a 20/03"
+                "Aquário     - 21/01 a 19/02",
+                "Peixes      - 20/02 a 20/03"
 
 
         };
