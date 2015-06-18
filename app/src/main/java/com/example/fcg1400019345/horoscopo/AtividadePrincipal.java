@@ -1,5 +1,6 @@
 package com.example.fcg1400019345.horoscopo;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -74,6 +75,7 @@ public class AtividadePrincipal extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+
         if (id == R.id.action_settings) {
             return true;
         }
@@ -86,10 +88,10 @@ public class AtividadePrincipal extends ActionBarActivity {
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Toast.makeText(getApplicationContext(),
-                    mAdaptador.getItem(position),
-                    Toast.LENGTH_SHORT
-            ).show();
+
+            Intent detailIntent = new Intent(getApplicationContext(),AtividadeDetalhes.class);
+            detailIntent.putExtra(Intent.EXTRA_TEXT,mAdaptador.getItem(position));
+            startActivity(detailIntent);
 
         }
     }
