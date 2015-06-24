@@ -34,7 +34,6 @@ public class AtividadeDetalhes extends ActionBarActivity {
 
         Button botao = (Button) findViewById(R.id.botao);
 
-
         botao.setOnClickListener(new BotaoClicado());
     }
 
@@ -60,24 +59,23 @@ public class AtividadeDetalhes extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private class BotaoClicado implements View.OnClickListener, AdapterView.OnItemClickListener {
-
+    private class BotaoClicado implements View.OnClickListener {
 
         @Override
         public void onClick(View v) {
 
-            Intent intent = new Intent(Intent.ACTION_SEARCH);
+            Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
 
-            intent.putExtra(SearchManager.QUERY, "TESTE");
+            TextView detailTextView = (TextView) findViewById(R.id.detalhe_item_texto);
+
+            String texto = detailTextView.getText().toString();
+
+            intent.putExtra(SearchManager.QUERY, texto);
             if (intent.resolveActivity(getPackageManager()) != null)
                 startActivity(intent);
 
         }
 
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-        }
     }
 
 }
