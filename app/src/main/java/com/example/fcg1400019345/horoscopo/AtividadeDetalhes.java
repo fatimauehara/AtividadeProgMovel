@@ -1,10 +1,14 @@
 package com.example.fcg1400019345.horoscopo;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -16,15 +20,21 @@ public class AtividadeDetalhes extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atividade_detalhes);
 
-        Intent intent = getIntent ();
+        Intent intent = getIntent();
         String detailText = intent.getStringExtra(Intent.EXTRA_TEXT);
 
-        if (intent.hasExtra(Intent.EXTRA_TEXT)){
+        if (intent.hasExtra(Intent.EXTRA_TEXT)) {
             TextView detailTextView = (TextView) findViewById(R.id.detalhe_item_texto);
             detailTextView.setText(detailText);
 
         }
 
+        // LIGAR BOTAO NA CLASSE
+
+        ListView listView = (ListView) findViewById(R.id.lista_principal);
+
+
+        listView.setOnItemClickListener(new BotaoClicado());
     }
 
     @Override
@@ -48,4 +58,25 @@ public class AtividadeDetalhes extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private class BotaoClicado implements View.OnClickListener, AdapterView.OnItemClickListener {
+
+
+        @Override
+        public void onClick(View v) {
+
+            Intent intent = new Intent(Intent.ACTION_SEARCH);
+
+            intent.putExtra(SearchManager.QUERY, "TESTE");
+            if (intent.resolveActivity(getPackageManager()) != null)
+                startActivity(intent);
+
+        }
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        }
+    }
+
 }
