@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,10 +32,10 @@ public class AtividadeDetalhes extends ActionBarActivity {
 
         // LIGAR BOTAO NA CLASSE
 
-        ListView listView = (ListView) findViewById(R.id.lista_principal);
+        Button botao = (Button) findViewById(R.id.botao);
 
 
-        listView.setOnItemClickListener(new BotaoClicado());
+        botao.setOnClickListener(new BotaoClicado());
     }
 
     @Override
