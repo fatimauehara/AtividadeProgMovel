@@ -2,6 +2,8 @@ package com.example.fcg1400019345.horoscopo;
 
 import android.app.SearchManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,8 +28,14 @@ public class AtividadeDetalhes extends ActionBarActivity {
 
         if (intent.hasExtra(Intent.EXTRA_TEXT)) {
             TextView detailTextView = (TextView) findViewById(R.id.detalhe_item_texto);
-            detailTextView.setText(detailText);
 
+            SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(this);
+            String signo = prefs.getString(getString(R.string.conf_signo_chave),
+                    getString(R.string.conf_signo_padrao));
+
+            detailText = "Seu signo é " + signo + ", e a  previsão escolhida é " + detailText;
+
+            detailTextView.setText(detailText);
         }
 
         // LIGAR BOTAO NA CLASSE

@@ -5,4 +5,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_atividade_detalhes">Detalhes</string>
     <string name="title_activity_atividade_configuracao">AtividadeConfiguracao</string>
+    <string name="conf_signo_titulo">Seu signo</string>
+    <string name="conf_signo_chave">signo</string>
+    <string name= "conf_signo_padrao">Touro</string>
+
 </resources>

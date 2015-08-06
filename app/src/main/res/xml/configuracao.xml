@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<EditTextPreference
+    android:title="@string/conf_signo_titulo"
+    android:key="@string/conf_signo_chave"
+    android:defaultValue="@string/conf_signo_padrao"
+    android:inputType="text"
+    android:singleLine="true"/>
+</PreferenceScreen>
