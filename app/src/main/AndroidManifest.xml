@@ -24,6 +24,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.fcg1400019345.horoscopo.AtividadePrincipal" />
         </activity>
+        <activity
+            android:name=".AtividadeConfiguracao"
+            android:label="@string/title_activity_atividade_configuracao"
+            android:parentActivityName=".AtividadePrincipal" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.fcg1400019345.horoscopo.AtividadePrincipal" />
+        </activity>
     </application>
 
 </manifest>
