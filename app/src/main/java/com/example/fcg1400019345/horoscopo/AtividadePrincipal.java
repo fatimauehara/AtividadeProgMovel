@@ -1,6 +1,7 @@
 package com.example.fcg1400019345.horoscopo;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,28 +27,10 @@ public class AtividadePrincipal extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atividade_principal);
 
-        String [] dados= {
-                "Áres        - 21/03 a 20/04",
-                "Touro       - 21/04 a 20/05",
-                "Gêmeos      - 21/05 a 20/06",
-                "Câncer      - 21/06 a 21/07",
-                "Leão        - 22/07 a 22/08",
-                "Virgem      - 23/08 a 22/09",
-                "Libra       - 23/09 a 22/10",
-                "Escorpião   - 23/10 a 21/11",
-                "Sargitário  - 22/11 a 21/12",
-                "Capricórnio - 22/12 a 20/01",
-                "Aquário     - 21/01 a 19/02",
-                "Peixes      - 20/02 a 20/03"
-
-
-        };
-
-
-        List<String> signos = new ArrayList<>(Arrays.asList(dados));
+        List<String> signos = new ArrayList<>();
 
         //CRIAR O ADAPTADOR
-        mAdaptador= new ArrayAdapter<>(
+        mAdaptador = new ArrayAdapter<>(
                 getApplicationContext(), //contexto atual
                 R.layout.item_lista_principal, //nome do ID do layout
                 R.id.item_texto, //ID do TextView a ser prenchido
@@ -58,6 +41,12 @@ public class AtividadePrincipal extends ActionBarActivity {
         listView.setAdapter(mAdaptador);
 
         listView.setOnItemClickListener(new ItemClicado());
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        atualizar();
     }
 
     @Override
@@ -75,15 +64,48 @@ public class AtividadePrincipal extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+        switch (id) {
+            case R.id.action_settings:
+                Intent configlIntent = new Intent(getApplicationContext(), AtividadeConfiguracao.class);
+                startActivity(configlIntent);
+                return true;
 
-        if (id == R.id.action_settings) {
-            Intent configlIntent = new Intent(getApplicationContext(),AtividadeConfiguracao.class);
-            startActivity(configlIntent);
+            case R.id.action_refresh:
+                atualizar();
+                return true;
 
-            return true;
         }
 
+
         return super.onOptionsItemSelected(item);
+    }
+
+    private void atualizar() {
+        PegaDadosDoServidor pega = new PegaDadosDoServidor();
+        pega.execute();
+
+    }
+
+
+    public class PegaDadosDoServidor extends AsyncTask<Void, Void, String[]> {
+
+        @Override
+        protected String[] doInBackground(Void... voids) {
+            ServidorFalso servidor = new ServidorFalso();
+            return servidor.pegaDados();
+
+        }
+
+        @Override
+        protected void onPostExecute(String[] result) {
+            if (result != null) {
+                mAdaptador.clear();
+                for (String r : result) {
+                    mAdaptador.add(r);
+                }
+            }
+        }
+
     }
 
 
@@ -92,8 +114,8 @@ public class AtividadePrincipal extends ActionBarActivity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-            Intent detailIntent = new Intent(getApplicationContext(),AtividadeDetalhes.class);
-            detailIntent.putExtra(Intent.EXTRA_TEXT,mAdaptador.getItem(position));
+            Intent detailIntent = new Intent(getApplicationContext(), AtividadeDetalhes.class);
+            detailIntent.putExtra(Intent.EXTRA_TEXT, mAdaptador.getItem(position));
             startActivity(detailIntent);
 
         }

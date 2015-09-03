@@ -8,5 +8,6 @@
     <string name="conf_signo_titulo">Seu signo</string>
     <string name="conf_signo_chave">signo</string>
     <string name= "conf_signo_padrao">Touro</string>
+    <string name="action_refresh">Atualizar</string>
 
 </resources>
