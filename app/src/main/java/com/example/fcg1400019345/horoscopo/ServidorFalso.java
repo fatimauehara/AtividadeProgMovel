@@ -5,37 +5,37 @@ package com.example.fcg1400019345.horoscopo;
  */
 
 public class ServidorFalso {
-    public String[] pegaDados() {
-        String[] dados1 = {
-                "Áres        - Tudo de bom",
-                "Touro       - Tudo de bom",
-                "Gêmeos      - Tudo de bom",
-                "Câncer      - Tudo de bom",
-                "Leão        - Tudo de bom",
-                "Virgem      - Tudo de bom",
-                "Libra       - Tudo de bom",
-                "Escorpião   - Tudo de bom",
-                "Sargitário  - Tudo de bom",
-                "Capricórnio - Tudo de bom",
-                "Aquário     - Tudo de bom",
-                "Peixes      - Tudo de bom"
-
+    public String[][] pegaDados() {
+        String[][] dados1 = {
+                {"1442361600", "Áres        ", "Tudo de bom"},
+                {"1442361600", "Touro       ", "Muito bom"},
+                {"1442361600", "Câncer      ", "Sempre bem"},
+                {"1442361600", "Leão        ", "Maravilhas"},
+                {"1442361600", "Virgem      ", "Ótimo "},
+                {"1442361600", "Libra       ", "Eternenamente feliz"
+                },
+                {"1442361600", "Escorpião   ", "Mara..."},
+                {"1442361600", "Sargitário  ", "Bem Feliz"},
+                {"1442361600", "Capricórnio ", "Só Love"},
+                {"1442361600", "Aquário     ", "Lindo dia"},
+                {"1442361600", "Peixes      ", "Marés de Amor"},
         };
 
-        String[] dados2 = {
-                "Áres        - Tudo Maravilhoso",
-                "Touro       - Tudo Maravilhoso",
-                "Gêmeos      - Tudo Maravilhoso",
-                "Câncer      - Tudo Maravilhoso",
-                "Leão        - Tudo Maravilhoso",
-                "Virgem      - Tudo Maravilhoso",
-                "Libra       - Tudo Maravilhoso",
-                "Escorpião   - Tudo Maravilhoso",
-                "Sargitário  - Tudo Maravilhoso",
-                "Capricórnio - Tudo Maravilhoso",
-                "Aquário     - Tudo Maravilhoso",
-                "Peixes      - Tudo Maravilhoso"
+        String[][] dados2 = {
+                {"1442448000", "Áres        ", "Tudo de bom"},
+                {"1442448000", "Touro       ", "Muito bom"},
+                {"1442448000", "Câncer      ", "Sempre bem"},
+                {"1442448000", "Leão        ", "Maravilhas"},
+                {"1442448000", "Virgem      ", "Ótimo "},
+                {"1442448000", "Libra       ", "Eternenamente feliz"
+                },
+                {"1442448000", "Escorpião   ", "Mara..."},
+                {"1442448000", "Sargitário  ", "Bem Feliz"},
+                {"1442448000", "Capricórnio ", "Só Love"},
+                {"1442448000", "Aquário     ", "Lindo dia"},
+                {"1442448000", "Peixes      ", "Marés de Amor"},
         };
+
 
         // Para não pegar sempre o mesmo...
         long time = System.currentTimeMillis() / 1000;
