@@ -29,6 +29,16 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
+        android:id="@+id/text_signo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView4"
+        android:layout_alignLeft="@+id/detalhe_item_texto"
+        android:layout_alignStart="@+id/detalhe_item_texto"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,6 +47,16 @@
         android:layout_below="@+id/textView3"
         android:layout_marginTop="35dp"
         android:text="Data"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/text_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignEnd="@+id/text_signo"
+        android:layout_alignRight="@+id/text_signo"
+        android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -51,33 +71,14 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/text_signo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView4"
-        android:layout_alignLeft="@+id/detalhe_item_texto"
-        android:layout_alignStart="@+id/detalhe_item_texto"
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
         android:id="@+id/text_previsao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/textView5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/text_data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignEnd="@+id/text_signo"
-        android:layout_alignRight="@+id/text_signo"
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_marginTop="60dp" />
 
 </RelativeLayout>
